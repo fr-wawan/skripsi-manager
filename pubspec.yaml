@@ -1,0 +1,18 @@
+name: skripsi_manager
+description: CLI Manajemen Tugas Akhir Mahasiswa
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.11.4
+
+# Add regular dependencies here.
+dependencies:
+  path: ^1.9.0
+  mason_logger: ^0.3.5
+  sqlite3: ^3.3.1
+  uuid: ^4.5.3
+
+dev_dependencies:
+  lints: ^6.1.0
+  test: ^1.31.1
