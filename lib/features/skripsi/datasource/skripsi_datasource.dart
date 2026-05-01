@@ -52,4 +52,12 @@ class SkripsiDatasource {
   void delete(String id) {
     _db.execute('DELETE FROM skripsi WHERE id = ?', [id]);
   }
+
+  int countByStatus(String status) {
+    final row = _db.select(
+      'SELECT COUNT(*) as total FROM skripsi WHERE status = ?',
+      [status],
+    );
+    return row.first['total'] as int;
+  }
 }

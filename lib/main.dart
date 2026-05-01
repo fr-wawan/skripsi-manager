@@ -11,6 +11,8 @@ Future<void> main() async {
 ║     SISTEM MANAJEMEN TUGAS AKHIR         ║
 ╚══════════════════════════════════════════╝''');
 
+  ic.dashboard.show();
+
   try {
     await _runApp(ic, logger);
   } finally {

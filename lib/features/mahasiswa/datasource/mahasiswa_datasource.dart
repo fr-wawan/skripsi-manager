@@ -57,4 +57,9 @@ class MahasiswaDatasource {
   void delete(String id) {
     _db.execute('DELETE FROM mahasiswa WHERE id = ?', [id]);
   }
+
+  int count() {
+    final row = _db.select('SELECT COUNT(*) as total FROM mahasiswa');
+    return row.first['total'] as int;
+  }
 }
