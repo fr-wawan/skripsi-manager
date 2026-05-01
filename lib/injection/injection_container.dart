@@ -1,4 +1,5 @@
 import 'package:mason_logger/mason_logger.dart';
+import 'package:skripsi_manager/features/bimbingan/injection/bimbingan_module.dart';
 import 'package:skripsi_manager/features/skripsi/datasource/skripsi_datasource.dart';
 import 'package:skripsi_manager/features/skripsi/injection/skripsi_module.dart';
 import 'package:skripsi_manager/features/skripsi/usecases/skripsi_usecases.dart';
@@ -10,6 +11,7 @@ class InjectionContainer {
   late final Logger logger;
   late final MahasiswaModule mahasiswa;
   late final SkripsiModule skripsi;
+  late final BimbinganModule bimbingan;
 
   InjectionContainer._();
 
@@ -31,5 +33,6 @@ class InjectionContainer {
 
     mahasiswa = MahasiswaModule()..register(logger);
     skripsi = SkripsiModule()..register(logger, mahasiswaUsecases);
+    bimbingan = BimbinganModule()..register(logger, skripsiUsecases);
   }
 }

@@ -34,7 +34,7 @@ Future<void> _runApp(InjectionContainer ic, Logger logger) async {
       case '2':
         _skripsiMenu(ic, logger);
       case '3':
-        logger.warn('Fitur manajemen bimbingan belum tersedia.');
+        _bimbinganMenu(ic, logger);
       case '0':
         logger.success('Sampai jumpa! 👋');
         return;
@@ -87,6 +87,30 @@ void _skripsiMenu(InjectionContainer ic, Logger logger) {
         ic.skripsi.command.add();
       case '3':
         ic.skripsi.command.updateStatus();
+      case '0':
+        return;
+      default:
+        logger.err('Pilihan tidak valid.');
+    }
+  }
+}
+
+void _bimbinganMenu(InjectionContainer ic, Logger logger) {
+  while (true) {
+    logger.info('''
+\n── Bimbingan ──
+  [1] Riwayat Bimbingan per Skripsi
+  [2] Tambah Bimbingan
+  [3] Edit Bimbingan
+  [0] Kembali
+''');
+    switch (logger.prompt('Pilih:')) {
+      case '1':
+        ic.bimbingan.command.listBySkripsi();
+      case '2':
+        ic.bimbingan.command.add();
+      case '3':
+        ic.bimbingan.command.edit();
       case '0':
         return;
       default:
