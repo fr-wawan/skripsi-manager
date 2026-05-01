@@ -77,7 +77,7 @@ Don't have Dart yet? Follow the official installation guide: https://dart.dev/ge
 
 ```bash
 git clone https://github.com/fr-wawan/skripsi-manager.git
-cd skripsi_manager
+cd skripsi-manager
 ```
 
 **2. Install dependencies**
